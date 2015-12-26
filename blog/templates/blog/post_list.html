@@ -1,23 +1,18 @@
-<html>
-    <head>
-        <title>meMind</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">meMind</a></h1>
-            post for the day are as:
-        </div>
+{% extends 'blog/base.html'%}
 
+{% block content %}
         {% for post in allposts %}
-        <div>
 
+            <div class="container">
+                    <div class="well">
             <p>published: {{ post.published_date }}</p>
+                    </div>
+
             <h2><a href="">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaks }}</p>
 
-        </div>
+           </div>
 
         {% endfor %}
 
-    </body>
-</html>
+{% endblock %}
