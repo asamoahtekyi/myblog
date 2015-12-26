@@ -1,7 +1,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from django.utils import timezone
+#from django.utils import timezone
+from datetime import datetime
 
 
 class Post(models.Model):
@@ -16,7 +17,7 @@ class Post(models.Model):
 
 
     def publish(self):
-        self.published_date = timezone.now()
+        self.published_date = datetime.now()
         self.save()
 
 
